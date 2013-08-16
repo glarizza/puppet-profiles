@@ -42,7 +42,7 @@ class profiles::wordpress {
   include vsftpd
 
   ## Configure wordpress
-  class { 'wordpress':
+  class { '::wordpress':
     install_dir => '/var/www/wordpress',
     db_name     => $wordpress_db_name,
     db_host     => $wordpress_db_host,
