@@ -1,10 +1,10 @@
 class profiles::wordpress {
-  $site_name               = hiera('profiles::wordpress::site_name')
-  $wordpress_user_password = hiera('profiles::wordpress::wordpress_user_password')
-  $mysql_root_password     = hiera('profiles::wordpress::mysql_root_password')
-  $wordpress_db_host       = hiera('profiles::wordpress::wordpress_db_host')
-  $wordpress_db_name       = hiera('profiles::wordpress::wordpress_db_name')
-  $wordpress_db_password   = hiera('profiles::wordpress::wordpress_db_password')
+  $site_name               = hiera('profiles::wordpress::site_name', 'wordpress.puppetlabs.lan')
+  $wordpress_user_password = hiera('profiles::wordpress::wordpress_user_password', 'wordpress')
+  $mysql_root_password     = hiera('profiles::wordpress::mysql_root_password', 'password')
+  $wordpress_db_host       = hiera('profiles::wordpress::wordpress_db_host', 'wordpress')
+  $wordpress_db_name       = hiera('profiles::wordpress::wordpress_db_name', 'wordpress')
+  $wordpress_db_password   = hiera('profiles::wordpress::wordpress_db_password', 'wordpress')
 
   ## Create user
   group { 'wordpress':
