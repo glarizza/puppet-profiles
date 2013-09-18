@@ -1,5 +1,5 @@
 name    'glarizza-profiles'
-version '0.0.2'
+version '0.0.3'
 source 'https://github.com/glarizza/puppet-profiles'
 author 'Gary Larizza'
 license 'Apache2'
