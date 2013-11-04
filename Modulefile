@@ -1,5 +1,5 @@
 name    'glarizza-profiles'
-version '0.0.4'
+version '0.0.5'
 source 'https://github.com/glarizza/puppet-profiles'
 author 'Gary Larizza'
 license 'Apache2'
@@ -9,7 +9,8 @@ project_page 'https://github.com/glarizza/puppet-profiles'
 
 ## Add dependencies, if any:
 dependency 'hunner/wordpress', '>= 0.4.0'
-dependency 'puppetlabs/apache', '>= 0.8.0'
+dependency 'puppetlabs/apache', '>= 0.9.0'
+dependency 'puppetlabs/mysql', '>= 2.0.0'
 dependency 'thias/vsftpd', '>= 0.1.0'
 dependency 'puppetlabs/firewall', '>= 0.4.0'
 dependency 'puppetlabs/java', '>= 1.0.0'

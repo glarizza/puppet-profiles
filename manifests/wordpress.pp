@@ -17,23 +17,19 @@ class profiles::wordpress {
     home     => '/var/www/wordpress',
   }
 
-  ## Configure host entry
-  host { $site_name:
-    ensure       => present,
-    ip           => $::ipaddress,
-    host_aliases => ['wordpress'],
-  }
-    
   ## Configure mysql
   class { 'mysql::server':
-    config_hash => { 'root_password' => $wordpress_root_password }
+    root_password => $wordpress_root_password,
   }
-  include mysql::php
+
+  class { 'mysql::bindings':
+    php_enable => true,
+  }
 
   ## Configure apache
   include apache
   include apache::mod::php
-  apache::vhost { $site_name:
+  apache::vhost { $::fqdn:
     port    => '80',
     docroot => '/var/www/wordpress',
   }

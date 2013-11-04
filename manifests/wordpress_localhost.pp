@@ -24,9 +24,12 @@ class profiles::wordpress_localhost {
 
   ## Configure mysql
   class { 'mysql::server':
-    config_hash => { 'root_password' => $wordpress_root_password }
+    root_password => $wordpress_root_password, 
   }
-  include mysql::php
+  
+  class {'mysql::bindings':
+    php_enable => true,
+  }
 
   ## Configure apache
   include apache
