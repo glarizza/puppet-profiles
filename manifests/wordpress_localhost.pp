@@ -3,11 +3,12 @@ class profiles::wordpress_localhost {
   # of a node...which is good for quick-provisioning examples with Vagrant
   # (hint hint)
   
-  $wordpress_user_password =  'wordpress'
-  $mysql_root_password     =  'password'
-  $wordpress_db_host       =  'localhost'
-  $wordpress_db_name       =  'wordpress'
-  $wordpress_db_password   =  'wordpress'
+  $wordpress_user_password = 'wordpress'
+  $mysql_root_password     = 'password'
+  $wordpress_db_host       = 'localhost'
+  $wordpress_db_name       = 'wordpress'
+  $wordpress_db_user       = 'wordpress'
+  $wordpress_db_password   = 'wordpress'
 
 
   ## Create user
@@ -35,18 +36,13 @@ class profiles::wordpress_localhost {
   include apache
   include apache::mod::php
 
-  ## Configure ftp for installing updates/themes. Disallows root login
-  include vsftpd
-
   ## Configure wordpress
   class { '::wordpress':
     install_dir => '/var/www/html',
     db_name     => $wordpress_db_name,
     db_host     => $wordpress_db_host,
-    db_user     => 'wordpress',
+    db_user     => $wordpress_db_user,
     db_password => $wordpress_db_password,
-    wp_owner    => 'wordpress',
-    wp_group    => 'wordpress',
     require     => Package['httpd'],
   }
 
