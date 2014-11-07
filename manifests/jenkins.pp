@@ -11,6 +11,7 @@ class profiles::jenkins {
     install_java       => false,
     port               => $jenkins_port,
     config_hash        => {
+      'HTTP_PORT'    => { 'value' => $jenkins_port },
       'JENKINS_PORT' => { 'value' => $jenkins_port },
     },
   }
