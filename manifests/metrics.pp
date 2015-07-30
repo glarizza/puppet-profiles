@@ -4,16 +4,16 @@
 #   mod 'puppetlabs/firewall'
 
 class profiles::metrics {
-  $influxdb_port         = 8086,
-  $graphite_port         = 2003,
-  $collectd_port         = 25826,
-  $grafana_port          = 8080,
-  #$influxdb_version      = '0.9.2',
-  $influxdb_version      = 'nightly',
-  $grafana_version       = '2.0.2',
-  $metrics_database      = 'graphite',
-  $grafana_database      = 'grafana',
-  $influxdb_root_user     = 'root',
+  $influxdb_port          = 8086
+  $graphite_port          = 2003
+  $collectd_port          = 25826
+  $grafana_port           = 8080
+  #$influxdb_version       = '0.9.2',
+  $influxdb_version       = 'nightly'
+  $grafana_version        = '2.0.2'
+  $metrics_database       = 'graphite'
+  $grafana_database       = 'grafana'
+  $influxdb_root_user     = 'root'
   $influxdb_root_password = 'root'
 
   class { '::influxdb::server':
