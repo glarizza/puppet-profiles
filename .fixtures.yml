@@ -1,0 +1,48 @@
+fixtures:
+  forge_modules:
+    stdlib:
+      repo: "puppetlabs/apache"
+      ref: "1.6.0"
+    ntp:
+      repo: "puppetlabs/ntp"
+      ref: "4.1.0"
+    influxdb:
+      repo: "golja/influxdb"
+      ref: "0.1.2"
+    firewall:
+      repo: "puppetlabs/firewall"
+      ref: "1.7.1"
+  repositories:
+    profiles:
+      repo: "git://github.com/glarizza/puppet-profiles"
+      ref: "fadc05e337c191ff7198286570581a6058edc808"
+    grafana:
+      repo: "https://github.com/bfraser/puppet-grafana.git"
+      ref: "v2.0.2"
+    catalog_diff:
+      repo: "https://github.com/acidprime/puppet-catalog-diff.git"
+      ref: "5ef365a0bc3464f54b9418ebde87233b223238da"
+    archive:
+      repo: "https://github.com/camptocamp/puppet-archive.git"
+      ref: "0.8.1"
+    docker:
+      repo: "https://github.com/garethr/garethr-docker.git"
+      ref: "v3.5.0"
+    wget:
+      repo: "https://github.com/maestrodev/puppet-wget.git"
+      ref: "v1.7.0"
+    stdlib:
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+      ref: "4.6.0"
+    concat:
+      repo: "https://github.com/puppetlabs/puppetlabs-concat.git"
+      ref: "1.2.4"
+    jenkins:
+      repo: "https://github.com/jenkinsci/puppet-jenkins.git"
+      ref: "v1.5.0"
+    staging:
+      repo: "https://github.com/nanliu/puppet-staging.git"
+      ref: "1.0.4"
+    java:
+      repo: "https://github.com/puppetlabs/puppetlabs-java.git"
+      ref: "1.4.1"
